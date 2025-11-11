@@ -124,6 +124,21 @@ h3,h4 {
 }
 
 /* ========================================
+   TABLE BORDERS - Restore original styling
+   ======================================== */
+
+/* Tables with border="1" attribute should have visible borders */
+table[border="1"] {
+  border: 1px solid slateGray;
+  border-collapse: collapse;
+}
+
+table[border="1"] td,
+table[border="1"] th {
+  border: 1px solid slateGray;
+}
+
+/* ========================================
    RESPONSIVE STYLES FOR MOBILE DEVICES
    ======================================== */
 
@@ -154,7 +169,7 @@ h3,h4 {
   select, input, .box, .button, .sm, .sm3 {
     font-size: 14px; /* Increased from 7pt-8pt for accessibility */
     min-height: 44px; /* Touch-friendly target size */
-    padding: 8px 12px;
+    padding: 4px 8px; /* Reduced from 8px 12px for more compact look */
   }
 
   .weekSelect {
@@ -182,9 +197,37 @@ h3,h4 {
     max-width: 100%;
   }
 
-  /* Increase table cell padding for touch */
+  /* Make scrollable tables more obvious with shadow indicators */
+  table[border="1"] {
+    /* Add subtle shadow on right edge to indicate more content */
+    background:
+      linear-gradient(to right, white 30%, rgba(255,255,255,0)),
+      linear-gradient(to right, rgba(0,0,0,0.1), rgba(255,255,255,0) 10px) 0 0,
+      linear-gradient(to left, rgba(0,0,0,0.1), rgba(255,255,255,0) 10px) 100% 0;
+    background-repeat: no-repeat;
+    background-size: 40px 100%, 10px 100%, 10px 100%;
+    background-attachment: local, scroll, scroll;
+  }
+
+  /* Make scrollbar more visible on mobile */
+  table::-webkit-scrollbar {
+    height: 8px;
+    -webkit-appearance: none;
+  }
+
+  table::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+  }
+
+  table::-webkit-scrollbar-thumb {
+    background-color: slateGray;
+    border-radius: 4px;
+  }
+
+  /* Increase table cell padding for touch - reduced for more compact look */
   td, th {
-    padding: 12px 8px !important;
+    padding: 6px 4px !important; /* Reduced from 12px 8px to match original compact design */
     min-width: 60px; /* Prevent cells from being too narrow */
   }
 
@@ -216,25 +259,25 @@ h3,h4 {
   .button {
     min-width: 100px;
     min-height: 44px;
-    padding: 12px 16px;
+    padding: 8px 12px; /* Reduced from 12px 16px */
     font-size: 14px;
   }
 
   /* Make sortable column headers more touch-friendly */
   .title {
-    padding: 12px 8px;
+    padding: 8px 4px; /* Reduced from 12px 8px */
     min-height: 44px;
     display: inline-block;
   }
 
   .list {
     min-height: 44px;
-    padding: 8px;
+    padding: 4px; /* Reduced from 8px */
   }
 
-  /* Responsive spacing */
+  /* Responsive spacing - keep closer to original 0.2em */
   #home-leader-board td {
-    padding: 0.5em;
+    padding: 0.3em; /* Reduced from 0.5em */
   }
 }
 
@@ -257,7 +300,7 @@ h3,h4 {
 
   /* Compact table cells for narrow screens */
   td, th {
-    padding: 10px 6px !important;
+    padding: 5px 3px !important; /* Reduced from 10px 6px for more compact design */
     min-width: 50px;
     font-size: 13px;
   }
@@ -292,7 +335,7 @@ h3,h4 {
   }
 
   td, th {
-    padding: 8px 6px !important;
+    padding: 5px 3px !important; /* Reduced from 8px 6px for compact design */
   }
 }
 
