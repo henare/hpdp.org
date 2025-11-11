@@ -24,7 +24,6 @@
       const container = document.createElement('div');
       container.className = 'pdf-viewer-container';
       container.style.width = '100%';
-      container.style.minHeight = '800px';
       container.style.border = '1px solid #ccc';
       container.style.position = 'relative';
       
