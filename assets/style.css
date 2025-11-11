@@ -23,8 +23,9 @@ Template: twentyeleven
     padding-right: 0px;
 }
 
-.entry-content object {
+.entry-content iframe[type="application/pdf"] {
     width: 100%;
     height: 100vh;
     max-height: 100vw;
+    border: none;
 }
