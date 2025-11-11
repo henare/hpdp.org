@@ -1,3 +1,49 @@
+/* ========================================
+   RESET TWENTY ELEVEN THEME SPACING
+   ======================================== */
+
+/* Remove extra spacing added by Twenty Eleven theme wrappers
+   The original stats site had minimal spacing - body with default 8px margin,
+   no padding on containers, and content directly at the edges
+
+   Twenty Eleven adds:
+   - body: padding: 0 2em (32px left/right)
+   - #page: margin: 2em auto (32px top/bottom)
+   - #main: padding: 1.625em 0 0 (26px top)
+   - #content: margin: 0 7.6% 0 7.6% (large left/right margins)
+
+   All of these need to be removed to match the compact original design */
+
+/* Override Twenty Eleven's #page margin */
+#page {
+  margin: 0 !important;
+}
+
+/* Override Twenty Eleven's #main padding */
+#main {
+  padding: 0 !important;
+}
+
+/* Override Twenty Eleven's #content margins */
+#content {
+  margin: 0 !important;
+}
+
+/* Override Twenty Eleven's #primary */
+#primary {
+  margin: 0 !important;
+}
+
+/* Ensure body has minimal spacing like the original */
+body {
+  margin: 8px !important;
+  padding: 0 !important;
+}
+
+/* ========================================
+   ORIGINAL STATS STYLES
+   ======================================== */
+
 body,td,p {
   font-family: verdana,sans-serif;
   font-size: 14pt;
@@ -152,6 +198,16 @@ table[border="1"] th {
 
 /* Tablet and below (< 768px) */
 @media screen and (max-width: 767px) {
+  /* On mobile, restore some padding for better readability */
+  body {
+    margin: 8px !important;
+    padding: 8px !important;
+  }
+
+  #page {
+    margin: 0 !important;
+  }
+
   /* Increase base font sizes for better readability */
   body, td, p {
     font-size: 16px; /* Increased from 14pt */
