@@ -2,56 +2,52 @@
    RESET TWENTY ELEVEN THEME SPACING
    ======================================== */
 
-/* Remove extra spacing added by Twenty Eleven theme wrappers
-   The original stats site had minimal spacing - body with default 8px margin,
-   no padding on containers, and content directly at the edges
+/* Remove extra spacing added by Twenty Eleven theme ONLY for stats content
+   The original stats site had minimal spacing with content directly at the edges
+
+   Strategy: Wrap stats content in .stats-content div and only reset spacing
+   within that container. This preserves the Twenty Eleven header, navigation,
+   and footer layout while giving stats content the compact original styling.
 
    Twenty Eleven adds:
-   - body: padding: 0 2em (32px left/right)
-   - #page: margin: 2em auto (32px top/bottom)
-   - #main: padding: 1.625em 0 0 (26px top)
    - #content: margin: 0 7.6% 0 7.6% (large left/right margins)
+   - Various padding on containers
 
-   All of these need to be removed to match the compact original design */
+   We override these ONLY within .stats-content to avoid breaking the page layout */
 
-/* Override Twenty Eleven's #page margin */
-#page {
+/* Stats content wrapper - remove margins and padding for compact layout */
+.stats-content {
   margin: 0 !important;
-}
-
-/* Override Twenty Eleven's #main padding */
-#main {
   padding: 0 !important;
 }
 
-/* Override Twenty Eleven's #content margins */
-#content {
-  margin: 0 !important;
+/* Remove any inherited spacing from stats content tables */
+.stats-content table {
+  margin: 0;
+  padding: 0;
 }
 
-/* Override Twenty Eleven's #primary */
-#primary {
-  margin: 0 !important;
-}
-
-/* Ensure body has minimal spacing like the original */
-body {
-  margin: 8px !important;
-  padding: 0 !important;
+/* Ensure stats content footer has minimal spacing */
+.stats-content footer {
+  margin: 0;
+  padding: 0;
 }
 
 /* ========================================
    ORIGINAL STATS STYLES
    ======================================== */
 
-body,td,p {
+/* Scope base typography to stats content only to avoid affecting blog posts */
+.stats-content,
+.stats-content td,
+.stats-content p {
   font-family: verdana,sans-serif;
   font-size: 14pt;
   border-top-width: 0;
   border-left-width: 0
 }
 
-h1 {
+.stats-content h1 {
   font-size: 18pt;
   font-weight: normal;
   display: inline
@@ -120,12 +116,12 @@ select,input {
   background-color: #eeeeee
 }
 
-a {
+.stats-content a {
   color: slateGray;
   text-decoration: none
 }
 
-a:hover {
+.stats-content a:hover {
   color: black;
 }
 
@@ -137,7 +133,8 @@ a:hover {
   font-size: 14pt;
 }
 
-h3,h4 {
+.stats-content h3,
+.stats-content h4 {
   display: inline
 }
 
@@ -173,14 +170,14 @@ h3,h4 {
    TABLE BORDERS - Restore original styling
    ======================================== */
 
-/* Tables with border="1" attribute should have visible borders */
-table[border="1"] {
+/* Tables with border="1" attribute should have visible borders in stats */
+.stats-content table[border="1"] {
   border: 1px solid slateGray;
   border-collapse: collapse;
 }
 
-table[border="1"] td,
-table[border="1"] th {
+.stats-content table[border="1"] td,
+.stats-content table[border="1"] th {
   border: 1px solid slateGray;
 }
 
@@ -198,26 +195,23 @@ table[border="1"] th {
 
 /* Tablet and below (< 768px) */
 @media screen and (max-width: 767px) {
-  /* On mobile, restore some padding for better readability */
-  body {
-    margin: 8px !important;
+  /* On mobile, add some padding to stats content for better readability */
+  .stats-content {
     padding: 8px !important;
   }
 
-  #page {
-    margin: 0 !important;
-  }
-
-  /* Increase base font sizes for better readability */
-  body, td, p {
+  /* Increase base font sizes for better readability in stats content */
+  .stats-content,
+  .stats-content td,
+  .stats-content p {
     font-size: 16px; /* Increased from 14pt */
   }
 
-  h1 {
+  .stats-content h1 {
     font-size: 24px; /* Increased from 18pt */
   }
 
-  .h1 {
+  .stats-content .h1 {
     font-size: 16px; /* Increased from 14pt */
   }
 
@@ -244,8 +238,8 @@ table[border="1"] th {
     font-size: 13px;
   }
 
-  /* Horizontal scroll wrapper for tables */
-  table {
+  /* Horizontal scroll wrapper for tables in stats content */
+  .stats-content table {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
@@ -254,7 +248,7 @@ table[border="1"] th {
   }
 
   /* Make scrollable tables more obvious with shadow indicators */
-  table[border="1"] {
+  .stats-content table[border="1"] {
     /* Add subtle shadow on right edge to indicate more content */
     background:
       linear-gradient(to right, white 30%, rgba(255,255,255,0)),
@@ -266,23 +260,24 @@ table[border="1"] th {
   }
 
   /* Make scrollbar more visible on mobile */
-  table::-webkit-scrollbar {
+  .stats-content table::-webkit-scrollbar {
     height: 8px;
     -webkit-appearance: none;
   }
 
-  table::-webkit-scrollbar-track {
+  .stats-content table::-webkit-scrollbar-track {
     background-color: #f0f0f0;
     border-radius: 4px;
   }
 
-  table::-webkit-scrollbar-thumb {
+  .stats-content table::-webkit-scrollbar-thumb {
     background-color: slateGray;
     border-radius: 4px;
   }
 
   /* Increase table cell padding for touch - reduced for more compact look */
-  td, th {
+  .stats-content td,
+  .stats-content th {
     padding: 6px 4px !important; /* Reduced from 12px 8px to match original compact design */
     min-width: 60px; /* Prevent cells from being too narrow */
   }
@@ -292,7 +287,7 @@ table[border="1"] th {
   @media (hover: none) {
     .title:hover,
     .black:hover,
-    a:hover {
+    .stats-content a:hover {
       color: inherit;
       background-color: inherit;
     }
@@ -306,7 +301,7 @@ table[border="1"] th {
       background-color: #eeeeee;
     }
 
-    a:active {
+    .stats-content a:active {
       color: black;
     }
   }
@@ -340,22 +335,25 @@ table[border="1"] th {
 /* Mobile phones (< 480px) */
 @media screen and (max-width: 479px) {
   /* Further optimize for very small screens */
-  body, td, p {
+  .stats-content,
+  .stats-content td,
+  .stats-content p {
     font-size: 14px;
   }
 
-  h1 {
+  .stats-content h1 {
     font-size: 20px;
     display: block; /* Stack on its own line */
     margin-bottom: 12px;
   }
 
-  .h1 {
+  .stats-content .h1 {
     font-size: 14px;
   }
 
   /* Compact table cells for narrow screens */
-  td, th {
+  .stats-content td,
+  .stats-content th {
     padding: 5px 3px !important; /* Reduced from 10px 6px for more compact design */
     min-width: 50px;
     font-size: 13px;
@@ -385,12 +383,15 @@ table[border="1"] th {
 /* Landscape orientation optimization */
 @media screen and (max-width: 767px) and (orientation: landscape) {
   /* In landscape, we have more horizontal space */
-  /* Slightly smaller fonts to fit more content */
-  body, td, p {
+  /* Slightly smaller fonts to fit more content in stats */
+  .stats-content,
+  .stats-content td,
+  .stats-content p {
     font-size: 14px;
   }
 
-  td, th {
+  .stats-content td,
+  .stats-content th {
     padding: 5px 3px !important; /* Reduced from 8px 6px for compact design */
   }
 }
@@ -398,7 +399,7 @@ table[border="1"] th {
 /* High DPI displays - ensure crisp rendering */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   /* Enhance text rendering on retina displays */
-  body {
+  .stats-content {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -406,20 +407,22 @@ table[border="1"] th {
 
 /* Print styles - maintain desktop layout when printing */
 @media print {
-  table {
+  .stats-content table {
     display: table;
     overflow-x: visible;
   }
 
-  /* Restore smaller fonts for printing */
-  body, td, p {
+  /* Restore smaller fonts for printing stats content */
+  .stats-content,
+  .stats-content td,
+  .stats-content p {
     font-size: 10pt;
   }
 
   /* Remove interactive styling */
   .title:hover,
   .black:hover,
-  a:hover {
+  .stats-content a:hover {
     color: inherit;
     background-color: inherit;
   }
