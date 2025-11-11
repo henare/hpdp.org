@@ -172,6 +172,12 @@ select,input {
   padding: 0.2em;
 }
 
+/* Remove paragraph margins inside stats tables (Twenty Eleven adds default margins) */
+.stats-content table p {
+  margin: 0;
+  padding: 0;
+}
+
 /* ========================================
    TABLE BORDERS - Restore original styling
    ======================================== */
