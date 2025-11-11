@@ -33,6 +33,22 @@
   padding: 0;
 }
 
+/* Ensure HTML align attributes work (not overridden by theme CSS) */
+.stats-content td[align="center"],
+.stats-content th[align="center"] {
+  text-align: center;
+}
+
+.stats-content td[align="left"],
+.stats-content th[align="left"] {
+  text-align: left;
+}
+
+.stats-content td[align="right"],
+.stats-content th[align="right"] {
+  text-align: right;
+}
+
 /* Ensure stats content footer has minimal spacing */
 .stats-content footer {
   margin: 0;
