@@ -27,6 +27,12 @@
   padding: 0;
 }
 
+/* Reset table cell padding to match original (no padding by default) */
+.stats-content td,
+.stats-content th {
+  padding: 0;
+}
+
 /* Ensure stats content footer has minimal spacing */
 .stats-content footer {
   margin: 0;
