@@ -1,0 +1,12 @@
+<table width="100%">
+<tr>
+<td><b class="pgTitle">Nick Power Cup {{ include.year }}</b></td>
+<td align="right" valign="bottom">{{ include.start_date }} - {{ include.end_date }}</td>
+</tr>
+</table>
+
+{% include npc_results.html results=include.results %}
+
+{% if include.show_link %}
+<p><a href="/stats/{{ include.year }}/npc/">View full results →</a></p>
+{% endif %}
