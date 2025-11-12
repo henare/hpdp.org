@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign npc_2025_page = site.pages | where: "url", "/stats/2025/npc/" | first %}
+{% assign npc_2025_page = site.pages | where: "url", "/results/2025/npc/" | first %}
 <section class="npc-results-home">
 	{% include npc_results_section.html results=site.data.npc2025 year=npc_2025_page.year start_date=npc_2025_page.start_date end_date=npc_2025_page.end_date show_link=true %}
 </section>

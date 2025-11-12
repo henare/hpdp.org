@@ -7,7 +7,7 @@ The official website for Harold Park District Players (HPDP), a community theatr
 This Jekyll-based site includes:
 - Main HPDP website content
 - Blog posts and news articles
-- Production statistics (integrated from stats.hpdp.org.au)
+- Production results (integrated from stats.hpdp.org.au)
 
 ## Quick Start
 
@@ -39,34 +39,34 @@ docker compose run --rm jekyll bundle update
 ```
 hpdp.org.au/
 ├── _posts/           # Blog posts
-├── stats/            # Production statistics content
+├── results/          # Production results content
 │   ├── 2002/
 │   ├── 2003/
-│   └── ...          # Year-by-year statistics
-├── _data/            # CSV data files for statistics
+│   └── ...          # Year-by-year results
+├── _data/            # CSV data files for results
 │   ├── venues.csv
 │   ├── directors.csv
 │   ├── presidents.csv
 │   └── ...
 ├── _includes/        # Reusable components
-│   └── stats/       # Stats-specific includes
+│   └── results/     # Results-specific includes
 ├── _layouts/         # Page templates
 ├── assets/           # CSS, JS, images
-│   └── stats/       # Stats-specific assets
+│   └── results/     # Results-specific assets
 └── _config.yml       # Jekyll configuration
 ```
 
-## Statistics Integration
+## Results Integration
 
-The production statistics from stats.hpdp.org.au are now integrated under `/stats/`.
+The production results from stats.hpdp.org.au are now integrated under `/results/`.
 
-### Viewing Statistics
+### Viewing Results
 
-- Main stats page: `/stats/`
-- Year-specific stats: `/stats/YYYY/` (e.g., `/stats/2023/`)
-- Production details: `/stats/YYYY/production-name/`
+- Main results page: `/results/`
+- Year-specific results: `/results/YYYY/` (e.g., `/results/2023/`)
+- Production details: `/results/YYYY/production-name/`
 
-### Adding New Statistics Data
+### Adding New Results Data
 
 1. Add or update CSV files in the `_data/` directory:
    - `productions.csv` - Main production data
@@ -77,15 +77,15 @@ The production statistics from stats.hpdp.org.au are now integrated under `/stat
 
 2. CSV files should follow the existing format with headers matching the current structure
 
-3. Run Jekyll build to regenerate the statistics pages
+3. Run Jekyll build to regenerate the results pages
 
-### Statistics Features
+### Results Features
 
 - Sortable tables (click column headers)
 - Responsive design for mobile viewing
 - Year-by-year production listings
 - Director, venue, and production type filtering
-- Search functionality on statistics pages
+- Search functionality on results pages
 
 ## Configuration
 
@@ -151,11 +151,11 @@ If the build fails:
 - Jekyll version: 4.0+
 - Ruby version: 2.7+
 - Key dependencies: jekyll-feed, jekyll-paginate
-- Stats integration maintains original functionality from stats.hpdp.org.au
+- Results integration maintains original functionality from stats.hpdp.org.au
 
 ## History
 
-The statistics section was integrated from a separate stats.hpdp.org.au repository in 2025, preserving all historical production data while maintaining the original site's blog and content structure.
+The results section was integrated from a separate stats.hpdp.org.au repository in 2025, preserving all historical production data while maintaining the original site's blog and content structure.
 
 ## License
 

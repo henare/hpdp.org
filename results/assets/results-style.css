@@ -1,0 +1,246 @@
+/* ========================================
+   RESET TWENTY ELEVEN THEME SPACING
+   ======================================== */
+
+/* Remove extra spacing added by Twenty Eleven theme ONLY for results content
+   The original results site had minimal spacing with content directly at the edges
+
+   Strategy: Wrap results content in .results-content div and only reset spacing
+   within that container. This preserves the Twenty Eleven header, navigation,
+   and footer layout while giving results content the compact original styling.
+
+   Twenty Eleven adds:
+   - #content: margin: 0 7.6% 0 7.6% (large left/right margins)
+   - Various padding on containers
+
+   We override these ONLY within .results-content to avoid breaking the page layout */
+
+/* Results content wrapper - remove margins and padding for compact layout */
+.results-content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove any inherited spacing from results content tables */
+.results-content table {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset table cell padding to match original (no padding by default) */
+.results-content td,
+.results-content th {
+  padding: 0;
+}
+
+/* Ensure HTML align attributes work (not overridden by theme CSS) */
+.results-content td[align="center"],
+.results-content th[align="center"] {
+  text-align: center;
+}
+
+.results-content td[align="left"],
+.results-content th[align="left"] {
+  text-align: left;
+}
+
+.results-content td[align="right"],
+.results-content th[align="right"] {
+  text-align: right;
+}
+
+/* Ensure results content footer has minimal spacing */
+.results-content footer {
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   ORIGINAL RESULTS STYLES
+   ======================================== */
+
+/* Scope base typography to results content only to avoid affecting blog posts */
+.results-content,
+.results-content td,
+.results-content p {
+  font-family: verdana,sans-serif;
+  font-size: 14pt;
+  border-top-width: 0;
+  border-left-width: 0
+}
+
+.results-content h1 {
+  font-size: 18pt;
+  font-weight: normal;
+  display: inline
+}
+
+.h1 {
+  font-family: tahoma,verdana,times,serif;
+  font-size: 14pt;
+  color: black
+}
+
+.pgTitle {
+  font-family: verdana,times,serif;
+  font-weight: bold;
+}
+
+select,input {
+  font-family: verdana,sans-serif;
+  font-size: 7pt;
+  text-align: center
+}
+
+.weekSelect {
+  font-family: verdana,sans-serif;
+  font-size: 8pt;
+  text-align: left;
+}
+
+.box {
+  font-family: verdana,sans-serif;
+  font-size: 7pt;
+  text-align: center;
+  border-width: 1;
+  border-color: black;
+  cursor: hand;
+}
+
+.title {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  cursor: hand
+}
+
+.title:hover {
+  color: slategray
+}
+
+.list {
+  cursor: hand
+}
+
+.button {
+  width: 100;
+  font-weight: bold;
+  font-size: 7pt;
+  font-family: verdana,sans-serif
+}
+
+.black {
+  color: black
+}
+
+.black:hover {
+  background-color: #eeeeee
+}
+
+.results-content a {
+  color: slateGray;
+  text-decoration: none
+}
+
+.results-content a:hover {
+  color: black;
+}
+
+.white {
+  color: white
+}
+
+.white3 {
+  font-size: 14pt;
+}
+
+.results-content h3,
+.results-content h4 {
+  display: inline
+}
+
+.mid {
+  font-size: 10pt;
+  font-weight: bold;
+  height: 30;
+}
+
+.mid2 {
+  font-size: 10pt;
+}
+
+.sm {
+  font-family: verdana,sans-serif;
+  font-size: 7pt
+}
+
+.sm2 {
+  font-size: 8pt
+}
+
+.sm3 {
+  font-size: 7pt;
+  color: slateGray;
+}
+
+#home-leader-board td {
+  padding: 0.2em;
+}
+
+/* Remove paragraph margins inside results tables (Twenty Eleven adds default margins) */
+.results-content table p {
+  margin: 0;
+  padding: 0;
+}
+
+/* NPC table wrapper sizes to fit content */
+.results-content .npc-table-wrapper {
+  display: inline-block;
+}
+
+/* ========================================
+   TABLE BORDERS - Restore original styling
+   ======================================== */
+
+/* Tables with border="1" attribute should have visible borders in results */
+.results-content table[border="1"] {
+  border: 1px solid slateGray;
+  border-collapse: collapse;
+}
+
+.results-content table[border="1"] td,
+.results-content table[border="1"] th {
+  border: 1px solid slateGray;
+}
+
+/* High DPI displays - ensure crisp rendering */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Enhance text rendering on retina displays */
+  .results-content {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Print styles - maintain desktop layout when printing */
+@media print {
+  .results-content table {
+    display: table;
+    overflow-x: visible;
+  }
+
+  /* Restore smaller fonts for printing results content */
+  .results-content,
+  .results-content td,
+  .results-content p {
+    font-size: 10pt;
+  }
+
+  /* Remove interactive styling */
+  .title:hover,
+  .black:hover,
+  .results-content a:hover {
+    color: inherit;
+    background-color: inherit;
+  }
+}

@@ -82,7 +82,7 @@ Template: twentyeleven
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* Make home page NPC results match stats page styling */
+/* Make home page NPC results match results page styling */
 .npc-results-home,
 .npc-results-home table {
     margin: 0 !important;
