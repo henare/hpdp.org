@@ -2,6 +2,11 @@
 layout: default
 ---
 
+{% assign npc_2025_page = site.pages | where: "url", "/results/2025/npc/" | first %}
+<section class="npc-results-home">
+	{% include npc_results_section.html results=site.data.npc2025 year=npc_2025_page.year start_date=npc_2025_page.start_date end_date=npc_2025_page.end_date show_link=true %}
+</section>
+
 					<nav id="nav-above">
 		<h3 class="assistive-text">Post navigation</h3>
 		<div class="nav-previous"><a href="/page/2/"><span class="meta-nav">←</span> Older posts</a></div>
