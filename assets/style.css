@@ -81,3 +81,88 @@ Template: twentyeleven
 .pdf-viewer-container canvas {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
+
+/* Make home page NPC results match stats page styling */
+.npc-results-home,
+.npc-results-home table {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.npc-results-home .npc-table-wrapper {
+    display: inline-block;
+}
+
+.npc-results-home,
+.npc-results-home td,
+.npc-results-home p {
+    font-family: verdana,sans-serif;
+    font-size: 14pt;
+    border-top-width: 0;
+    border-left-width: 0;
+}
+
+.npc-results-home td,
+.npc-results-home th {
+    padding: 0;
+}
+
+/* Ensure HTML align attributes work */
+.npc-results-home td[align="center"],
+.npc-results-home th[align="center"] {
+    text-align: center;
+}
+
+.npc-results-home td[align="left"],
+.npc-results-home th[align="left"] {
+    text-align: left;
+}
+
+.npc-results-home td[align="right"],
+.npc-results-home th[align="right"] {
+    text-align: right;
+}
+
+.npc-results-home table[border="1"] {
+    border: 1px solid slateGray;
+    border-collapse: collapse;
+}
+
+.npc-results-home table[border="1"] td,
+.npc-results-home table[border="1"] th {
+    border: 1px solid slateGray;
+}
+
+.npc-results-home a {
+    color: slateGray;
+    text-decoration: none;
+}
+
+.npc-results-home a:hover {
+    color: black;
+}
+
+.npc-results-home .title {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    cursor: hand;
+}
+
+.npc-results-home .title:hover {
+    color: slategray;
+}
+
+.npc-results-home .list {
+    cursor: hand;
+}
+
+.npc-results-home table p {
+    margin: 0;
+    padding: 0;
+}
+
+.npc-results-home .pgTitle {
+    font-family: verdana,times,serif;
+    font-weight: bold;
+}

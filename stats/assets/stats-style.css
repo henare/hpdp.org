@@ -193,6 +193,11 @@ select,input {
   padding: 0;
 }
 
+/* NPC table wrapper sizes to fit content */
+.stats-content .npc-table-wrapper {
+  display: inline-block;
+}
+
 /* ========================================
    TABLE BORDERS - Restore original styling
    ======================================== */
