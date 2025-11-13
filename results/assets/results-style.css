@@ -1,244 +1,126 @@
 /* ========================================
-   RESET TWENTY ELEVEN THEME SPACING
+   RESULTS PAGES - Modern styling
    ======================================== */
 
-/* Remove extra spacing added by Twenty Eleven theme ONLY for results content
-   The original results site had minimal spacing with content directly at the edges
+:root {
+  --primary-color: #2c3e50;
+  --border-color: #708090;
+  --light-bg: #f8f9fa;
+}
 
-   Strategy: Wrap results content in .results-content div and only reset spacing
-   within that container. This preserves the Twenty Eleven header, navigation,
-   and footer layout while giving results content the compact original styling.
-
-   Twenty Eleven adds:
-   - #content: margin: 0 7.6% 0 7.6% (large left/right margins)
-   - Various padding on containers
-
-   We override these ONLY within .results-content to avoid breaking the page layout */
-
-/* Results content wrapper - remove margins and padding for compact layout */
+/* Reset for results content to preserve compact layout */
 .results-content {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Remove any inherited spacing from results content tables */
-.results-content table {
   margin: 0;
-  padding: 0;
+  padding: 1rem;
 }
 
-/* Reset table cell padding to match original (no padding by default) */
+.results-content table {
+  margin: 1rem auto;
+  border-collapse: collapse;
+  width: auto;
+}
+
 .results-content td,
 .results-content th {
-  padding: 0;
-}
-
-/* Ensure HTML align attributes work (not overridden by theme CSS) */
-.results-content td[align="center"],
-.results-content th[align="center"] {
+  padding: 0.5rem 1rem;
   text-align: center;
+  border: 1px solid var(--border-color);
 }
 
-.results-content td[align="left"],
-.results-content th[align="left"] {
-  text-align: left;
-}
-
-.results-content td[align="right"],
-.results-content th[align="right"] {
-  text-align: right;
-}
-
-/* Ensure results content footer has minimal spacing */
-.results-content footer {
-  margin: 0;
-  padding: 0;
-}
-
-/* ========================================
-   ORIGINAL RESULTS STYLES
-   ======================================== */
-
-/* Scope base typography to results content only to avoid affecting blog posts */
-.results-content,
-.results-content td,
-.results-content p {
-  font-family: verdana,sans-serif;
-  font-size: 14pt;
-  border-top-width: 0;
-  border-left-width: 0
-}
-
-.results-content h1 {
-  font-size: 18pt;
-  font-weight: normal;
-  display: inline
-}
-
-.h1 {
-  font-family: tahoma,verdana,times,serif;
-  font-size: 14pt;
-  color: black
-}
-
-.pgTitle {
-  font-family: verdana,times,serif;
+.results-content th {
+  background-color: var(--primary-color);
+  color: white;
   font-weight: bold;
 }
 
-select,input {
-  font-family: verdana,sans-serif;
-  font-size: 7pt;
-  text-align: center
-}
-
-.weekSelect {
-  font-family: verdana,sans-serif;
-  font-size: 8pt;
-  text-align: left;
-}
-
-.box {
-  font-family: verdana,sans-serif;
-  font-size: 7pt;
-  text-align: center;
-  border-width: 1;
-  border-color: black;
-  cursor: hand;
-}
-
-.title {
-  color: black;
-  font-weight: bold;
-  text-align: center;
-  cursor: hand
-}
-
-.title:hover {
-  color: slategray
-}
-
-.list {
-  cursor: hand
-}
-
-.button {
-  width: 100;
-  font-weight: bold;
-  font-size: 7pt;
-  font-family: verdana,sans-serif
-}
-
-.black {
-  color: black
-}
-
-.black:hover {
-  background-color: #eeeeee
+.results-content tr:hover {
+  background-color: var(--light-bg);
 }
 
 .results-content a {
-  color: slateGray;
-  text-decoration: none
+  color: var(--border-color);
+  text-decoration: none;
 }
 
 .results-content a:hover {
   color: black;
 }
 
-.white {
-  color: white
-}
-
-.white3 {
-  font-size: 14pt;
-}
-
-.results-content h3,
-.results-content h4 {
-  display: inline
-}
-
-.mid {
-  font-size: 10pt;
+.title {
+  color: black;
   font-weight: bold;
-  height: 30;
+  text-align: center;
+  cursor: pointer;
 }
 
-.mid2 {
-  font-size: 10pt;
+.title:hover {
+  color: var(--border-color);
 }
 
-.sm {
-  font-family: verdana,sans-serif;
-  font-size: 7pt
+.pgTitle {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.2rem;
 }
 
-.sm2 {
-  font-size: 8pt
-}
-
-.sm3 {
-  font-size: 7pt;
-  color: slateGray;
-}
-
-#home-leader-board td {
-  padding: 0.2em;
-}
-
-/* Remove paragraph margins inside results tables (Twenty Eleven adds default margins) */
+/* Remove paragraph margins inside tables */
 .results-content table p {
   margin: 0;
   padding: 0;
 }
 
-/* NPC table wrapper sizes to fit content */
-.results-content .npc-table-wrapper {
+/* NPC table wrapper */
+.npc-table-wrapper {
   display: inline-block;
+  text-align: center;
 }
 
-/* ========================================
-   TABLE BORDERS - Restore original styling
-   ======================================== */
-
-/* Tables with border="1" attribute should have visible borders in results */
+/* Table borders */
 .results-content table[border="1"] {
-  border: 1px solid slateGray;
+  border: 1px solid var(--border-color);
   border-collapse: collapse;
 }
 
 .results-content table[border="1"] td,
 .results-content table[border="1"] th {
-  border: 1px solid slateGray;
+  border: 1px solid var(--border-color);
 }
 
-/* High DPI displays - ensure crisp rendering */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  /* Enhance text rendering on retina displays */
+/* Home leader board specific styling */
+#home-leader-board {
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+#home-leader-board td {
+  padding: 0.4rem 0.8rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   .results-content {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    padding: 0.5rem;
+  }
+
+  .results-content table {
+    font-size: 0.9rem;
+  }
+
+  .results-content td,
+  .results-content th {
+    padding: 0.3rem 0.5rem;
   }
 }
 
-/* Print styles - maintain desktop layout when printing */
+/* Print styles */
 @media print {
   .results-content table {
-    display: table;
-    overflow-x: visible;
-  }
-
-  /* Restore smaller fonts for printing results content */
-  .results-content,
-  .results-content td,
-  .results-content p {
     font-size: 10pt;
   }
 
-  /* Remove interactive styling */
   .title:hover,
-  .black:hover,
   .results-content a:hover {
     color: inherit;
     background-color: inherit;

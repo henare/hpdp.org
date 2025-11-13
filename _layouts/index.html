@@ -7,51 +7,49 @@ layout: default
 	{% include npc_results_section.html results=site.data.npc2025 year=npc_2025_page.year start_date=npc_2025_page.start_date end_date=npc_2025_page.end_date show_link=true %}
 </section>
 
-					<nav id="nav-above">
-		<h3 class="assistive-text">Post navigation</h3>
-		<div class="nav-previous"><a href="/page/2/"><span class="meta-nav">←</span> Older posts</a></div>
-		<div class="nav-next"></div>
-	</nav><!-- #nav-above -->
-
 {%- for post in paginator.posts -%}
-	<article class="post type-post status-publish format-standard hentry">
+	<article>
 		<header class="entry-header">
-			<h1 class="entry-title"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title | escape }}</a></h1>
+			<h1 class="entry-title">
+				<a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title | escape }}</a>
+			</h1>
 			<div class="entry-meta">
 				{%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-				<span class="sep">Posted on </span><a href="{{ post.url | relative_url }}" rel="bookmark"><time class="entry-date" datetime="{{ post.date |  date: date_to_xmlschema }}">{{ post.date | date: date_format }}</time></a>
-			</div><!-- .entry-meta -->
-		</header><!-- .entry-header -->
+				<span>Posted on </span>
+				<a href="{{ post.url | relative_url }}" rel="bookmark">
+					<time datetime="{{ post.date | date: date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+				</a>
+			</div>
+		</header>
 
 		<div class="entry-content">
 			{{ post.content }}
-		</div><!-- .entry-content -->
+		</div>
 
 		<footer class="entry-meta">
 			{%- if post.categories.size > 0 -%}
-				<span class="cat-links">
-				  <span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> {{ post.categories | array_to_sentence_string }}
-				</span>
+				<span>Posted in {{ post.categories | array_to_sentence_string }}</span>
 			{%- endif -%}
 			{%- if post.categories.size > 0 and post.tags.size > 0 -%}
-				<span class="sep"> | </span>
+				<span> | </span>
 			{%- endif -%}
 			{%- if post.tags.size > 0 -%}
-				<span class="tag-links">
-					<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> {{ post.tags | array_to_sentence_string: ' ' }}
-				</span>
+				<span>Tagged {{ post.tags | array_to_sentence_string: ' ' }}</span>
 			{%- endif -%}
-		</footer><!-- .entry-meta -->
-	</article><!-- #post-831 -->
+		</footer>
+	</article>
 {%- endfor -%}
 
-		<nav id="nav-below">
-			<h3 class="assistive-text">Post navigation</h3>
-			{% if paginator.next_page %}
-				<div class="nav-previous"><a href="{{ paginator.next_page_path }}"><span class="meta-nav">←</span> Older posts</a></div>
-			{% endif %}
-			{% if paginator.previous_page %}
-				<div class="nav-next"><a href="{{ paginator.previous_page_path }}">Newer posts <span class="meta-nav">→</span></a></div>
-			{% endif %}
-		</nav>
-	</nav><!-- #nav-above -->
+<nav class="navigation">
+	<h3>Post navigation</h3>
+	<div>
+		{% if paginator.next_page %}
+			<a href="{{ paginator.next_page_path }}">← Older posts</a>
+		{% endif %}
+	</div>
+	<div>
+		{% if paginator.previous_page %}
+			<a href="{{ paginator.previous_page_path }}">Newer posts →</a>
+		{% endif %}
+	</div>
+</nav>

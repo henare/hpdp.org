@@ -1,168 +1,358 @@
 /*
 Theme Name: HPDP
-Theme URI: http://www.hpdp.org.au
-Author: Harold Park Hackers
-Author URI: http://www.hpdp.org.au/
-Description: The HPDP theme, a child theme of Twenty Eleven
-Version: 1.0
-License: GNU General Public License
-Template: twentyeleven
+Description: Modern, minimal theme for HPDP pool competition site
+Version: 2.0
 */
 
-@import url("twentyeleven_style.css");
+/* ========================================
+   BASE - Pico CSS via CDN for modern defaults
+   ======================================== */
+@import url("https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css");
 
-#branding #searchform {
-    display: none;
+/* ========================================
+   LAYOUT & STRUCTURE
+   ======================================== */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --hover-color: #2980b9;
+  --border-color: #708090;
+  --light-bg: #f8f9fa;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
 #branding {
-    border-top: none;
+  text-align: center;
+  padding: 1rem 0;
 }
 
-#branding .only-search + #access div {
-    padding-right: 0px;
+#branding img {
+  max-width: 100%;
+  height: auto;
 }
 
-.entry-content iframe[type="application/pdf"] {
-    width: 100%;
-    height: 100vh;
-    max-height: 100vw;
-    border: none;
+#site-title {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-/* PDF.js Viewer Styles */
+#site-description {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+nav#access {
+  margin: 1rem 0;
+}
+
+nav#access h3 {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+nav#access .skip-link {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+nav#access ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav#access li {
+  margin: 0;
+}
+
+nav#access a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+nav#access a:hover {
+  background-color: var(--light-bg);
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+#main {
+  padding: 2rem 1rem;
+}
+
+#content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   POSTS & ARTICLES
+   ======================================== */
+article {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+article:last-child {
+  border-bottom: none;
+}
+
+.entry-meta {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.entry-meta a {
+  color: #666;
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.navigation a:hover {
+  background-color: var(--light-bg);
+}
+
+/* ========================================
+   PDF VIEWER
+   ======================================== */
 .pdf-viewer-container {
-    margin: 20px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .pdf-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 1rem;
+  background-color: var(--light-bg);
 }
 
 .pdf-controls button {
-    padding: 8px 16px;
-    background-color: #0073aa;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 14px;
+  padding: 8px 16px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .pdf-controls button:hover:not(:disabled) {
-    background-color: #005177;
+  background-color: var(--hover-color);
 }
 
 .pdf-controls button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .pdf-controls span {
-    font-size: 14px;
-    font-weight: bold;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .pdf-controls a {
-    color: #0073aa;
-    text-decoration: none;
-    font-size: 14px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .pdf-controls a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .pdf-viewer-container canvas {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+  height: auto;
 }
 
-/* Make home page NPC results match results page styling */
+/* ========================================
+   RESULTS PAGES - NPC TABLES
+   ======================================== */
 .npc-results-home,
-.npc-results-home table {
-    margin: 0 !important;
-    padding: 0 !important;
+.results-content {
+  margin: 2rem 0;
 }
 
-.npc-results-home .npc-table-wrapper {
-    display: inline-block;
-}
-
-.npc-results-home,
-.npc-results-home td,
-.npc-results-home p {
-    font-family: verdana,sans-serif;
-    font-size: 14pt;
-    border-top-width: 0;
-    border-left-width: 0;
+.npc-results-home table,
+.results-content table {
+  width: auto;
+  margin: 1rem auto;
+  border-collapse: collapse;
 }
 
 .npc-results-home td,
-.npc-results-home th {
-    padding: 0;
+.npc-results-home th,
+.results-content td,
+.results-content th {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
 }
 
-/* Ensure HTML align attributes work */
-.npc-results-home td[align="center"],
-.npc-results-home th[align="center"] {
-    text-align: center;
+.npc-results-home th,
+.results-content th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
 }
 
-.npc-results-home td[align="left"],
-.npc-results-home th[align="left"] {
-    text-align: left;
+.npc-results-home tr:hover,
+.results-content tr:hover {
+  background-color: var(--light-bg);
 }
 
-.npc-results-home td[align="right"],
-.npc-results-home th[align="right"] {
-    text-align: right;
+.npc-results-home .title,
+.results-content .title {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
 }
 
-.npc-results-home table[border="1"] {
-    border: 1px solid slateGray;
-    border-collapse: collapse;
+.npc-results-home .title:hover,
+.results-content .title:hover {
+  color: var(--border-color);
 }
 
-.npc-results-home table[border="1"] td,
-.npc-results-home table[border="1"] th {
-    border: 1px solid slateGray;
+.npc-results-home a,
+.results-content a {
+  color: var(--border-color);
+  text-decoration: none;
 }
 
-.npc-results-home a {
-    color: slateGray;
-    text-decoration: none;
+.npc-results-home a:hover,
+.results-content a:hover {
+  color: black;
 }
 
-.npc-results-home a:hover {
-    color: black;
+.npc-results-home .pgTitle,
+.results-content .pgTitle {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
 }
 
-.npc-results-home .title {
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    cursor: hand;
+.npc-results-home table p,
+.results-content table p {
+  margin: 0;
+  padding: 0;
 }
 
-.npc-results-home .title:hover {
-    color: slategray;
+.npc-table-wrapper {
+  text-align: center;
 }
 
-.npc-results-home .list {
-    cursor: hand;
+/* ========================================
+   FOOTER
+   ======================================== */
+#colophon {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  color: #666;
+  font-size: 0.9rem;
 }
 
-.npc-results-home table p {
-    margin: 0;
-    padding: 0;
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  #main {
+    padding: 1rem 0.5rem;
+  }
+
+  nav#access ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .npc-results-home table,
+  .results-content table {
+    font-size: 0.9rem;
+  }
+
+  .npc-results-home td,
+  .npc-results-home th,
+  .results-content td,
+  .results-content th {
+    padding: 0.3rem 0.5rem;
+  }
 }
 
-.npc-results-home .pgTitle {
-    font-family: verdana,times,serif;
-    font-weight: bold;
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  nav#access,
+  .pdf-controls {
+    display: none;
+  }
+
+  .npc-results-home table,
+  .results-content table {
+    font-size: 10pt;
+  }
 }
