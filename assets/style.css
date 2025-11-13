@@ -285,8 +285,9 @@ article:last-child {
 .entry-title {
   background-color: transparent;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0.75rem 0;
   border: none;
+  border-bottom: 2px solid var(--pool-table-green);
 }
 
 .entry-title h1 {
