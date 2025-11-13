@@ -249,6 +249,7 @@ a:hover {
 .entry-content a,
 .comment-content a {
   color: #2c3e50;
+  text-decoration: underline;
 }
 
 .entry-content a:hover,
