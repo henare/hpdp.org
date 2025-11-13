@@ -505,8 +505,9 @@ article > footer.entry-meta {
   margin: 2rem 0;
 }
 
-/* Back link navigation */
-.results-content .back-link {
+/* Back link navigation and view results link */
+.results-content .back-link,
+.view-results-link {
   display: inline-block;
   margin: 0.5rem 0 1rem 0;
   padding: 0.5rem 1rem;
@@ -520,7 +521,8 @@ article > footer.entry-meta {
   font-weight: 500;
 }
 
-.results-content .back-link:hover {
+.results-content .back-link:hover,
+.view-results-link:hover {
   color: white !important;
   background-color: var(--pool-table-green);
   border-color: var(--pool-table-green);
