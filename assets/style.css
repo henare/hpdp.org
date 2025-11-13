@@ -5,9 +5,37 @@ Version: 2.0
 */
 
 /* ========================================
-   BASE - Pico CSS via CDN for modern defaults
+   BASE STYLES
    ======================================== */
-@import url("https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+p, ul, ol, blockquote, pre {
+  margin: 1rem 0;
+}
+
+ul, ol {
+  padding-left: 2rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
 /* ========================================
    LAYOUT & STRUCTURE
@@ -146,8 +174,8 @@ nav#access li {
 }
 
 nav#access a {
-  text-decoration: none;
-  padding: 0.5rem 1rem;
+  text-decoration: none !important;
+  padding: 0.6rem 1.2rem;
   border-radius: 4px;
   transition: background-color 0.2s, border-bottom 0.2s;
   color: #ffffff;
@@ -158,6 +186,7 @@ nav#access a {
 nav#access a:hover {
   background-color: rgba(45, 80, 22, 0.3);
   border-bottom: 2px solid var(--pool-table-green);
+  text-decoration: none !important;
 }
 
 /* ========================================
@@ -205,6 +234,29 @@ section {
   background-color: transparent;
 }
 
+/* Override Pico CSS link defaults */
+a {
+  color: #708090;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
+}
+
+/* Links in light content areas */
+.entry-content a,
+.comment-content a {
+  color: #2c3e50;
+}
+
+.entry-content a:hover,
+.comment-content a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
+}
+
 /* ========================================
    POSTS & ARTICLES
    ======================================== */
@@ -225,41 +277,63 @@ article:last-child {
 
 .entry-header {
   background-color: #e8e8e8;
-  padding: 1rem;
+  padding: 1.5rem 1.5rem 0;
   margin: 0;
   border-radius: 8px 8px 0 0;
 }
 
 .entry-title {
   background-color: transparent;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  border: none;
+}
+
+.entry-title h1 {
   margin: 0;
   padding: 0;
+  border: none;
 }
 
 .entry-title a {
   color: #222;
+  text-decoration: none;
+}
+
+.entry-title a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
 }
 
 .entry-content {
   background-color: #e8e8e8;
-  padding: 1rem;
+  padding: 1.5rem;
+  color: #222;
 }
 
-.entry-meta {
+.entry-header .entry-meta {
   color: #666;
   font-size: 0.9rem;
   margin: 0;
-  padding: 1rem;
-  background-color: #e8e8e8;
+  padding: 0;
+  background-color: transparent;
 }
 
 .entry-meta a {
   color: #666;
+  text-decoration: none;
+}
+
+.entry-meta a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
 }
 
 article > footer.entry-meta {
   border-top: 1px solid #d0d0d0;
   border-radius: 0 0 8px 8px;
+  padding: 1rem 1.5rem;
+  background-color: #e8e8e8;
 }
 
 .npc-results-home {
@@ -346,7 +420,7 @@ article > footer.entry-meta {
 }
 
 .navigation a {
-  text-decoration: none;
+  text-decoration: none !important;
   padding: 0.5rem 1rem;
   border: 1px solid var(--pool-table-green);
   border-radius: 4px;
@@ -358,6 +432,7 @@ article > footer.entry-meta {
 .navigation a:hover {
   background-color: var(--pool-table-green);
   color: #ffffff;
+  text-decoration: none !important;
 }
 
 /* ========================================
@@ -476,7 +551,8 @@ article > footer.entry-meta {
 
 .npc-results-home a:hover,
 .results-content a:hover {
-  color: black;
+  color: var(--pool-table-green);
+  text-decoration: underline;
 }
 
 .npc-results-home .pgTitle,
