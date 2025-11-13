@@ -6,3 +6,15 @@ layout: default
 <div class="results-content">
   {{ content }}
 </div>
+
+<script>
+// Make table rows with data-href clickable
+document.addEventListener('DOMContentLoaded', function() {
+  const rows = document.querySelectorAll('tr[data-href]');
+  rows.forEach(function(row) {
+    row.addEventListener('click', function() {
+      window.location.href = row.getAttribute('data-href');
+    });
+  });
+});
+</script>

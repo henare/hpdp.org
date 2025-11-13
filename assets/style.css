@@ -517,6 +517,15 @@ article > footer.entry-meta {
   border-bottom: 2px solid var(--pool-table-green);
 }
 
+/* Clickable rows */
+#home-leader-board tbody tr[data-href] {
+  cursor: pointer;
+}
+
+#home-leader-board tbody tr[data-href]:hover {
+  background-color: #e8f5e9;
+}
+
 /* Back link navigation and view results link */
 .results-content .back-link,
 .npc-results-home .view-results-link {
