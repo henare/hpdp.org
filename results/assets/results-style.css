@@ -1,244 +1,311 @@
 /* ========================================
-   RESET TWENTY ELEVEN THEME SPACING
+   RESULTS PAGES - Modern styling
    ======================================== */
 
-/* Remove extra spacing added by Twenty Eleven theme ONLY for results content
-   The original results site had minimal spacing with content directly at the edges
+:root {
+  --primary-color: #2c3e50;
+  --border-color: #708090;
+  --light-bg: #f8f9fa;
+  --off-white: #fafafa;
+  --pool-table-green: #2d5016;
+}
 
-   Strategy: Wrap results content in .results-content div and only reset spacing
-   within that container. This preserves the Twenty Eleven header, navigation,
-   and footer layout while giving results content the compact original styling.
-
-   Twenty Eleven adds:
-   - #content: margin: 0 7.6% 0 7.6% (large left/right margins)
-   - Various padding on containers
-
-   We override these ONLY within .results-content to avoid breaking the page layout */
-
-/* Results content wrapper - remove margins and padding for compact layout */
+/* Reset for results content to preserve compact layout */
 .results-content {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Remove any inherited spacing from results content tables */
-.results-content table {
   margin: 0;
-  padding: 0;
+  padding: 2rem 1rem;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 0 60px rgba(45, 80, 22, 0.4);
 }
 
-/* Reset table cell padding to match original (no padding by default) */
+/* Back link navigation */
+.results-content .back-link {
+  display: inline-block;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.results-content .back-link:hover {
+  color: white !important;
+  background-color: var(--pool-table-green);
+  border-color: var(--pool-table-green);
+  text-decoration: none !important;
+}
+
+.results-content table {
+  margin: 1rem auto;
+  border-collapse: collapse;
+  width: auto;
+  box-shadow: 0 0 20px rgba(45, 80, 22, 0.3);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
 .results-content td,
 .results-content th {
-  padding: 0;
-}
-
-/* Ensure HTML align attributes work (not overridden by theme CSS) */
-.results-content td[align="center"],
-.results-content th[align="center"] {
+  padding: 0.75rem 1.25rem;
   text-align: center;
+  border: 1px solid #d0d0d0;
+  background-color: #f5f5f5;
+  color: #222;
 }
 
-.results-content td[align="left"],
-.results-content th[align="left"] {
-  text-align: left;
+.results-content th {
+  background-color: var(--pool-table-green);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.results-content td[align="right"],
-.results-content th[align="right"] {
-  text-align: right;
+.results-content tbody tr {
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-/* Ensure results content footer has minimal spacing */
-.results-content footer {
-  margin: 0;
-  padding: 0;
+.results-content tbody tr:hover {
+  background-color: #e8f5e9;
+  box-shadow: inset 0 0 10px rgba(45, 80, 22, 0.15);
 }
 
-/* ========================================
-   ORIGINAL RESULTS STYLES
-   ======================================== */
-
-/* Scope base typography to results content only to avoid affecting blog posts */
-.results-content,
-.results-content td,
-.results-content p {
-  font-family: verdana,sans-serif;
-  font-size: 14pt;
-  border-top-width: 0;
-  border-left-width: 0
+.results-content tbody tr:hover td {
+  background-color: #e8f5e9;
 }
 
-.results-content h1 {
-  font-size: 18pt;
-  font-weight: normal;
-  display: inline
+.results-content tbody tr:nth-child(even) td {
+  background-color: #fafafa;
 }
 
-.h1 {
-  font-family: tahoma,verdana,times,serif;
-  font-size: 14pt;
-  color: black
+.results-content tbody tr:nth-child(even):hover td {
+  background-color: #e8f5e9;
 }
 
-.pgTitle {
-  font-family: verdana,times,serif;
+/* Highlight Points column (2nd column) */
+.results-content td:nth-child(2),
+.results-content th:nth-child(2) {
   font-weight: bold;
 }
 
-select,input {
-  font-family: verdana,sans-serif;
-  font-size: 7pt;
-  text-align: center
+.results-content tbody td:nth-child(2) {
+  border-left: 3px solid var(--pool-table-green);
+  border-right: 3px solid var(--pool-table-green);
 }
 
-.weekSelect {
-  font-family: verdana,sans-serif;
-  font-size: 8pt;
-  text-align: left;
+/* Bold player names (1st column) */
+.results-content tbody td:nth-child(1) {
+  font-weight: bold;
 }
 
-.box {
-  font-family: verdana,sans-serif;
-  font-size: 7pt;
-  text-align: center;
-  border-width: 1;
-  border-color: black;
-  cursor: hand;
+.results-content a {
+  color: var(--border-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.results-content a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
 }
 
 .title {
   color: black;
   font-weight: bold;
   text-align: center;
-  cursor: hand
+  cursor: pointer;
 }
 
 .title:hover {
-  color: slategray
+  color: var(--pool-table-green);
 }
 
-.list {
-  cursor: hand
-}
-
-.button {
-  width: 100;
+.pgTitle {
   font-weight: bold;
-  font-size: 7pt;
-  font-family: verdana,sans-serif
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.2rem;
 }
 
-.black {
-  color: black
-}
-
-.black:hover {
-  background-color: #eeeeee
-}
-
-.results-content a {
-  color: slateGray;
-  text-decoration: none
-}
-
-.results-content a:hover {
-  color: black;
-}
-
-.white {
-  color: white
-}
-
-.white3 {
-  font-size: 14pt;
-}
-
-.results-content h3,
-.results-content h4 {
-  display: inline
-}
-
-.mid {
-  font-size: 10pt;
-  font-weight: bold;
-  height: 30;
-}
-
-.mid2 {
-  font-size: 10pt;
-}
-
-.sm {
-  font-family: verdana,sans-serif;
-  font-size: 7pt
-}
-
-.sm2 {
-  font-size: 8pt
-}
-
-.sm3 {
-  font-size: 7pt;
-  color: slateGray;
-}
-
-#home-leader-board td {
-  padding: 0.2em;
-}
-
-/* Remove paragraph margins inside results tables (Twenty Eleven adds default margins) */
+/* Remove paragraph margins inside tables */
 .results-content table p {
   margin: 0;
   padding: 0;
 }
 
-/* NPC table wrapper sizes to fit content */
-.results-content .npc-table-wrapper {
-  display: inline-block;
+/* NPC Section Header */
+.npc-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--pool-table-green);
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-/* ========================================
-   TABLE BORDERS - Restore original styling
-   ======================================== */
+.npc-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
 
-/* Tables with border="1" attribute should have visible borders in results */
+.npc-dates {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* NPC table wrapper */
+.npc-table-wrapper {
+  display: block;
+  text-align: center;
+  overflow-x: auto;
+  clear: both;
+}
+
+/* Table borders */
 .results-content table[border="1"] {
-  border: 1px solid slateGray;
+  border: 1px solid var(--border-color);
   border-collapse: collapse;
 }
 
 .results-content table[border="1"] td,
 .results-content table[border="1"] th {
-  border: 1px solid slateGray;
+  border: 1px solid var(--border-color);
 }
 
-/* High DPI displays - ensure crisp rendering */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  /* Enhance text rendering on retina displays */
+/* Home leader board specific styling */
+#home-leader-board {
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+#home-leader-board td {
+  padding: 0.5rem 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   .results-content {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    padding: 0.5rem;
+  }
+
+  .npc-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .npc-title {
+    font-size: 1.25rem;
+  }
+
+  .npc-dates {
+    font-size: 0.9rem;
+  }
+
+  .results-content table {
+    font-size: 0.85rem;
+  }
+
+  .results-content td,
+  .results-content th {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .results-content th {
+    font-size: 0.8rem;
+  }
+
+  .npc-table-wrapper {
+    margin: 0 -1rem;
+    padding: 0 1rem;
   }
 }
 
-/* Print styles - maintain desktop layout when printing */
+/* Header abbreviations - default: show full, hide abbreviated */
+.abbr-header {
+  display: none;
+}
+
+.full-header {
+  display: inline;
+}
+
+/* Extra-small screens - aggressive compression for phones */
+@media (max-width: 480px) {
+  .results-content {
+    padding: 0.25rem;
+  }
+
+  .results-content table {
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .results-content td,
+  .results-content th {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .results-content th {
+    font-size: 0.7rem;
+  }
+
+  .npc-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .npc-title {
+    font-size: 1.15rem;
+  }
+
+  .npc-dates {
+    font-size: 0.85rem;
+  }
+
+  .results-content .back-link {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Show abbreviated headers on small screens */
+  .full-header {
+    display: none;
+  }
+
+  .abbr-header {
+    display: inline;
+  }
+}
+
+/* Print styles */
 @media print {
   .results-content table {
-    display: table;
-    overflow-x: visible;
-  }
-
-  /* Restore smaller fonts for printing results content */
-  .results-content,
-  .results-content td,
-  .results-content p {
     font-size: 10pt;
   }
 
-  /* Remove interactive styling */
   .title:hover,
-  .black:hover,
   .results-content a:hover {
     color: inherit;
     background-color: inherit;

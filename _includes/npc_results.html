@@ -1,31 +1,22 @@
-<table border="1" bordercolor="slateGray" cellspacing="0" cellpadding="0">
-<tr bgcolor="#eeeeee">
-<!-- <td>&nbsp;</td> -->
-<td width="100"> <a href="javascript:sortBy('name','asc','text')" class="title">name</a>
-</td>
-<td width="1"><img src="spacer.gif" width="1" height="1"></td>
-<td width="70" align="center"><a href="javascript:sortBy('points','asc','numeric')" class="title"> points </a></td>
-<td width="1"><img src="spacer.gif" width="1" height="1"></td>
-
-	<td align="center" width="70"><a href="javascript:sortBy('w1','desc','numeric')" class="title">week 1</a></td>
-
-	<td align="center" width="70"><a href="javascript:sortBy('w2','desc','numeric')" class="title">week 2</a></td>
-
-	<td align="center" width="70"><a href="javascript:sortBy('w3','desc','numeric')" class="title">week 3</a></td>
-
-
+<table>
+<thead>
+<tr>
+	<th><span class="full-header">Name</span><span class="abbr-header">Name</span></th>
+	<th><span class="full-header">Total</span><span class="abbr-header">Tot</span></th>
+	<th><span class="full-header">Week 1</span><span class="abbr-header">W1</span></th>
+	<th><span class="full-header">Week 2</span><span class="abbr-header">W2</span></th>
+	<th><span class="full-header">Week 3</span><span class="abbr-header">W3</span></th>
 </tr>
-
+</thead>
+<tbody>
 {% for player in include.results %}
-	<tr onmouseover="roll(this,1)" onmouseout="roll(this,0)" class="list">
-	<td nowrap>&nbsp;{{ player.name }} </td>
-	<td width="1"><img src="spacer.gif" width="1" height="1"></td>
-	<td align="center">{{ player.total }}</td>
-	<td width="1"><img src="spacer.gif" width="1" height="1"></td>
-		<td align="center">{{ player.week1 }}</td>
-		<td align="center">{{ player.week2 }}</td>
-		<td align="center">{{ player.week3 }}</td>
+	<tr>
+		<td>{{ player.name }}</td>
+		<td>{{ player.total }}</td>
+		<td>{{ player.week1 }}</td>
+		<td>{{ player.week2 }}</td>
+		<td>{{ player.week3 }}</td>
 	</tr>
 {% endfor %}
-
+</tbody>
 </table>

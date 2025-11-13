@@ -1,168 +1,837 @@
 /*
 Theme Name: HPDP
-Theme URI: http://www.hpdp.org.au
-Author: Harold Park Hackers
-Author URI: http://www.hpdp.org.au/
-Description: The HPDP theme, a child theme of Twenty Eleven
-Version: 1.0
-License: GNU General Public License
-Template: twentyeleven
+Description: Modern, minimal theme for HPDP pool competition site
+Version: 2.0
 */
 
-@import url("twentyeleven_style.css");
-
-#branding #searchform {
-    display: none;
+/* ========================================
+   BASE STYLES
+   ======================================== */
+* {
+  box-sizing: border-box;
 }
 
+html {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+p, ul, ol, blockquote, pre {
+  margin: 1rem 0;
+}
+
+ul, ol {
+  padding-left: 2rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* ========================================
+   LAYOUT & STRUCTURE
+   ======================================== */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --hover-color: #2980b9;
+  --border-color: #708090;
+  --light-bg: #f8f9fa;
+  --off-white: #fafafa;
+  --pool-table-green: #2d5016;
+  --header-black: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+}
+
+#page {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #2a2a2a;
+}
+
+/* ========================================
+   HEADER & NAVIGATION - Pool Table Theme
+   ======================================== */
 #branding {
-    border-top: none;
+  text-align: center;
+  padding: 1rem 1rem 0.5rem;
+  background-color: var(--header-black);
+  margin: 0;
 }
 
-#branding .only-search + #access div {
-    padding-right: 0px;
+#branding img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* Fade edges to blend into black background */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 5%,
+    black 97%,
+    transparent 100%
+  ),
+  linear-gradient(
+    to right,
+    transparent 0%,
+    black 3%,
+    black 97%,
+    transparent 100%
+  );
+  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 5%,
+    black 97%,
+    transparent 100%
+  ),
+  linear-gradient(
+    to right,
+    transparent 0%,
+    black 3%,
+    black 97%,
+    transparent 100%
+  );
+  -webkit-mask-composite: source-in;
 }
 
-.entry-content iframe[type="application/pdf"] {
-    width: 100%;
-    height: 100vh;
-    max-height: 100vw;
-    border: none;
+#site-title {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-/* PDF.js Viewer Styles */
+#site-description {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+nav#access {
+  margin: 0;
+  padding: 0.4rem 1rem;
+  background-color: #1a1a1a;
+  border-bottom: 3px solid var(--pool-table-green);
+}
+
+nav#access h3 {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+nav#access .skip-link {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+nav#access ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav#access li {
+  margin: 0;
+}
+
+nav#access a {
+  text-decoration: none !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background-color 0.2s, border-bottom 0.2s;
+  color: #ffffff;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+
+nav#access a:hover {
+  background-color: rgba(45, 80, 22, 0.3);
+  border-bottom: 2px solid var(--pool-table-green);
+  text-decoration: none !important;
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+#main {
+  padding: 2rem 1rem;
+  background-color: #2a2a2a;
+  position: relative;
+}
+
+#main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(45, 80, 22, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#content {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure all content elements have dark backgrounds */
+#primary {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+section {
+  background-color: transparent;
+}
+
+/* Override Pico CSS link defaults */
+a {
+  color: #708090;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
+}
+
+/* Links in light content areas */
+.entry-content a,
+.comment-content a {
+  color: #2c3e50;
+  text-decoration: underline;
+}
+
+.entry-content a:hover,
+.comment-content a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
+}
+
+/* ========================================
+   POSTS & ARTICLES
+   ======================================== */
+article {
+  margin-bottom: 3rem;
+  padding: 0;
+  border-bottom: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 8px;
+  overflow: visible;
+  box-shadow: 0 0 30px rgba(45, 80, 22, 0.4);
+}
+
+article:last-child {
+  border-bottom: none;
+}
+
+.entry-header {
+  background-color: #e8e8e8;
+  padding: 1.5rem 1.5rem 0.5rem;
+  margin: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.entry-title {
+  background-color: transparent;
+  margin: 0;
+  padding: 0 0 0.75rem 0;
+  border: none;
+  border-bottom: 2px solid var(--pool-table-green);
+}
+
+.entry-title h1 {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.entry-title a {
+  color: #222;
+  text-decoration: none;
+}
+
+.entry-title a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
+}
+
+.entry-content {
+  background-color: #e8e8e8;
+  padding: 0.5rem 1.5rem 1.5rem;
+  color: #222;
+}
+
+.entry-content h2 {
+  color: #222;
+}
+
+.entry-header .entry-meta {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.entry-meta a {
+  color: #666;
+  text-decoration: none;
+}
+
+.entry-meta a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
+}
+
+article > footer.entry-meta {
+  border-top: 1px solid #d0d0d0;
+  border-radius: 0 0 8px 8px;
+  padding: 1rem 1.5rem;
+  background-color: #e8e8e8;
+}
+
+.npc-results-home {
+  background-color: #e8e8e8;
+  position: relative;
+  padding: 2rem 1rem;
+  margin: 0 0 3rem 0;
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(45, 80, 22, 0.4);
+}
+
+.npc-results-home table {
+  background-color: transparent;
+}
+
+/* Comments section */
+#comments {
+  background-color: transparent;
+  margin-top: 3rem;
+}
+
+#comments h2 {
+  padding: 1rem;
+  background-color: #e8e8e8;
+  color: #222;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+.commentlist {
+  background-color: #e8e8e8;
+  padding: 1rem;
+  border-radius: 0 0 8px 8px;
+  list-style: none;
+  margin: 0;
+  position: relative;
+  box-shadow: 0 0 60px rgba(45, 80, 22, 0.4);
+}
+
+.comment {
+  background-color: transparent;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.comment-meta {
+  background-color: transparent;
+}
+
+.comment-author {
+  background-color: transparent;
+  color: #666;
+}
+
+.comment-content {
+  background-color: transparent;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  background-color: transparent;
+}
+
+.navigation h3 {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navigation a {
+  text-decoration: none !important;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--pool-table-green);
+  border-radius: 4px;
+  background-color: #e8e8e8;
+  color: #333;
+  box-shadow: 0 0 20px rgba(45, 80, 22, 0.3);
+}
+
+.navigation a:hover {
+  background-color: var(--pool-table-green);
+  color: #ffffff;
+  text-decoration: none !important;
+}
+
+/* ========================================
+   PDF VIEWER
+   ======================================== */
 .pdf-viewer-container {
-    margin: 20px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .pdf-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 1rem;
+  background-color: var(--light-bg);
 }
 
 .pdf-controls button {
-    padding: 8px 16px;
-    background-color: #0073aa;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 14px;
+  padding: 8px 16px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .pdf-controls button:hover:not(:disabled) {
-    background-color: #005177;
+  background-color: var(--hover-color);
 }
 
 .pdf-controls button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .pdf-controls span {
-    font-size: 14px;
-    font-weight: bold;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .pdf-controls a {
-    color: #0073aa;
-    text-decoration: none;
-    font-size: 14px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .pdf-controls a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .pdf-viewer-container canvas {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+  height: auto;
 }
 
-/* Make home page NPC results match results page styling */
+/* ========================================
+   RESULTS PAGES - NPC TABLES
+   ======================================== */
 .npc-results-home,
-.npc-results-home table {
-    margin: 0 !important;
-    padding: 0 !important;
+.results-content {
+  margin: 2rem 0;
 }
 
-.npc-results-home .npc-table-wrapper {
-    display: inline-block;
+/* Results content headings */
+.results-content h1 {
+  color: #222;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--pool-table-green);
 }
 
-.npc-results-home,
+/* Clickable rows */
+#home-leader-board tbody tr[data-href] {
+  cursor: pointer;
+}
+
+#home-leader-board tbody tr[data-href]:hover {
+  background-color: #e8f5e9;
+}
+
+/* Back link navigation and view results link */
+.results-content .back-link,
+.npc-results-home .view-results-link {
+  display: inline-block;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.results-content .back-link:hover,
+.npc-results-home .view-results-link:hover {
+  color: white !important;
+  background-color: var(--pool-table-green);
+  border-color: var(--pool-table-green);
+  text-decoration: none !important;
+}
+
+.npc-results-home table,
+.results-content table {
+  width: auto;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(45, 80, 22, 0.3);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
 .npc-results-home td,
-.npc-results-home p {
-    font-family: verdana,sans-serif;
-    font-size: 14pt;
-    border-top-width: 0;
-    border-left-width: 0;
+.npc-results-home th,
+.results-content td,
+.results-content th {
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  border: 1px solid #d0d0d0;
+  background-color: #f5f5f5;
+  color: #222;
 }
 
-.npc-results-home td,
-.npc-results-home th {
-    padding: 0;
+.npc-results-home th,
+.results-content th {
+  background-color: var(--pool-table-green);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Ensure HTML align attributes work */
-.npc-results-home td[align="center"],
-.npc-results-home th[align="center"] {
-    text-align: center;
+.npc-results-home tbody tr,
+.results-content tbody tr {
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-.npc-results-home td[align="left"],
-.npc-results-home th[align="left"] {
-    text-align: left;
+.npc-results-home tbody tr:hover,
+.results-content tbody tr:hover {
+  background-color: #e8f5e9;
+  box-shadow: inset 0 0 10px rgba(45, 80, 22, 0.15);
 }
 
-.npc-results-home td[align="right"],
-.npc-results-home th[align="right"] {
-    text-align: right;
+.npc-results-home tbody tr:nth-child(odd) td,
+.results-content tbody tr:nth-child(odd) td {
+  background-color: #f5f5f5;
 }
 
-.npc-results-home table[border="1"] {
-    border: 1px solid slateGray;
-    border-collapse: collapse;
+.npc-results-home tbody tr:nth-child(even) td,
+.results-content tbody tr:nth-child(even) td {
+  background-color: #fafafa;
 }
 
-.npc-results-home table[border="1"] td,
-.npc-results-home table[border="1"] th {
-    border: 1px solid slateGray;
+.npc-results-home tbody tr:hover td,
+.results-content tbody tr:hover td {
+  background-color: #e8f5e9;
 }
 
-.npc-results-home a {
-    color: slateGray;
-    text-decoration: none;
+/* Highlight Points column (2nd column) */
+.npc-results-home td:nth-child(2),
+.npc-results-home th:nth-child(2),
+.results-content td:nth-child(2),
+.results-content th:nth-child(2) {
+  font-weight: bold;
 }
 
-.npc-results-home a:hover {
-    color: black;
+.npc-results-home tbody td:nth-child(2),
+.results-content tbody td:nth-child(2) {
+  border-left: 3px solid var(--pool-table-green);
+  border-right: 3px solid var(--pool-table-green);
 }
 
-.npc-results-home .title {
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    cursor: hand;
+/* Bold player names (1st column) */
+.npc-results-home tbody td:nth-child(1),
+.results-content tbody td:nth-child(1) {
+  font-weight: bold;
 }
 
-.npc-results-home .title:hover {
-    color: slategray;
+.npc-results-home .title,
+.results-content .title {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
 }
 
-.npc-results-home .list {
-    cursor: hand;
+.npc-results-home .title:hover,
+.results-content .title:hover {
+  color: var(--pool-table-green);
 }
 
-.npc-results-home table p {
-    margin: 0;
-    padding: 0;
+.npc-results-home a,
+.results-content a {
+  color: var(--border-color);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-.npc-results-home .pgTitle {
-    font-family: verdana,times,serif;
-    font-weight: bold;
+.npc-results-home a:hover,
+.results-content a:hover {
+  color: var(--pool-table-green);
+  text-decoration: underline;
+}
+
+.npc-results-home .pgTitle,
+.results-content .pgTitle {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.npc-results-home table p,
+.results-content table p {
+  margin: 0;
+  padding: 0;
+}
+
+/* NPC Section Header */
+.npc-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--pool-table-green);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.npc-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.npc-dates {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.npc-table-wrapper {
+  display: block;
+  text-align: center;
+  overflow-x: auto;
+  clear: both;
+}
+
+/* Responsive table wrapper for mobile */
+@media (max-width: 768px) {
+  .npc-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .npc-title {
+    font-size: 1.25rem;
+  }
+
+  .npc-dates {
+    font-size: 0.9rem;
+  }
+
+  .npc-table-wrapper {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+#colophon {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--pool-table-green);
+  color: #999;
+  font-size: 0.9rem;
+  background-color: #2a2a2a;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  #main {
+    padding: 1rem 0.5rem;
+  }
+
+  nav#access ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .npc-results-home table,
+  .results-content table {
+    font-size: 0.85rem;
+  }
+
+  .npc-results-home td,
+  .npc-results-home th,
+  .results-content td,
+  .results-content th {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .npc-results-home th,
+  .results-content th {
+    font-size: 0.8rem;
+  }
+}
+
+/* Header abbreviations - default: show full, hide abbreviated */
+.abbr-header {
+  display: none;
+}
+
+.full-header {
+  display: inline;
+}
+
+/* Extra-small screens - aggressive compression for phones */
+@media (max-width: 480px) {
+  .npc-results-home table,
+  .results-content table {
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .npc-results-home td,
+  .npc-results-home th,
+  .results-content td,
+  .results-content th {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .npc-results-home th,
+  .results-content th {
+    font-size: 0.7rem;
+  }
+
+  .npc-section-header {
+    font-size: 0.9rem;
+  }
+
+  .npc-title {
+    font-size: 1.15rem;
+  }
+
+  .npc-dates {
+    font-size: 0.85rem;
+  }
+
+  /* Show abbreviated headers on small screens */
+  .full-header {
+    display: none;
+  }
+
+  .abbr-header {
+    display: inline;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  nav#access,
+  .pdf-controls {
+    display: none;
+  }
+
+  .npc-results-home table,
+  .results-content table {
+    font-size: 10pt;
+  }
 }
