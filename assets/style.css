@@ -18,6 +18,8 @@ Version: 2.0
   --hover-color: #2980b9;
   --border-color: #708090;
   --light-bg: #f8f9fa;
+  --pool-table-green: #2d5016;
+  --header-black: #000000;
 }
 
 body {
@@ -28,19 +30,56 @@ body {
 #page {
   max-width: 1200px;
   margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ========================================
-   HEADER & NAVIGATION
+   HEADER & NAVIGATION - Pool Table Theme
    ======================================== */
 #branding {
   text-align: center;
-  padding: 1rem 0;
+  padding: 1rem 1rem 0.5rem;
+  background-color: var(--header-black);
+  margin: 0;
 }
 
 #branding img {
-  max-width: 100%;
+  max-width: 350px;
+  width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto;
+  /* Fade edges to blend into black background */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 5%,
+    black 97%,
+    transparent 100%
+  ),
+  linear-gradient(
+    to right,
+    transparent 0%,
+    black 3%,
+    black 97%,
+    transparent 100%
+  );
+  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 5%,
+    black 97%,
+    transparent 100%
+  ),
+  linear-gradient(
+    to right,
+    transparent 0%,
+    black 3%,
+    black 97%,
+    transparent 100%
+  );
+  -webkit-mask-composite: source-in;
 }
 
 #site-title {
@@ -64,7 +103,10 @@ body {
 }
 
 nav#access {
-  margin: 1rem 0;
+  margin: 0;
+  padding: 1rem 0;
+  background-color: #1a1a1a;
+  border-bottom: 3px solid var(--pool-table-green);
 }
 
 nav#access h3 {
@@ -105,11 +147,15 @@ nav#access a {
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, border-bottom 0.2s;
+  color: #ffffff;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
 }
 
 nav#access a:hover {
-  background-color: var(--light-bg);
+  background-color: rgba(45, 80, 22, 0.3);
+  border-bottom: 2px solid var(--pool-table-green);
 }
 
 /* ========================================
