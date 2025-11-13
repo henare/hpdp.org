@@ -277,14 +277,14 @@ article:last-child {
 
 .entry-header {
   background-color: #e8e8e8;
-  padding: 1.5rem 1.5rem 0;
+  padding: 1.5rem 1.5rem 0.5rem;
   margin: 0;
   border-radius: 8px 8px 0 0;
 }
 
 .entry-title {
   background-color: transparent;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   padding: 0;
   border: none;
 }
@@ -307,7 +307,7 @@ article:last-child {
 
 .entry-content {
   background-color: #e8e8e8;
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem 1.5rem;
   color: #222;
 }
 
