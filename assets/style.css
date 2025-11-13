@@ -506,28 +506,53 @@ article > footer.entry-meta {
   width: auto;
   margin: 1rem auto;
   border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(45, 80, 22, 0.3);
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .npc-results-home td,
 .npc-results-home th,
 .results-content td,
 .results-content th {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
   text-align: center;
-  border: 1px solid var(--border-color);
-  background-color: #e8e8e8;
+  border: 1px solid #d0d0d0;
+  background-color: #f5f5f5;
+  color: #222;
 }
 
 .npc-results-home th,
 .results-content th {
-  background-color: var(--primary-color);
+  background-color: var(--pool-table-green);
   color: white;
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.npc-results-home tbody tr,
+.results-content tbody tr {
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
 .npc-results-home tbody tr:hover,
 .results-content tbody tr:hover {
-  background-color: var(--light-bg);
+  background-color: #e8f5e9;
+  box-shadow: inset 0 0 10px rgba(45, 80, 22, 0.15);
+}
+
+.npc-results-home tbody tr:nth-child(even) td,
+.results-content tbody tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+.npc-results-home tbody tr:nth-child(even):hover td,
+.results-content tbody tr:nth-child(even):hover td {
+  background-color: #e8f5e9;
 }
 
 .npc-results-home .title,
@@ -540,13 +565,14 @@ article > footer.entry-meta {
 
 .npc-results-home .title:hover,
 .results-content .title:hover {
-  color: var(--border-color);
+  color: var(--pool-table-green);
 }
 
 .npc-results-home a,
 .results-content a {
   color: var(--border-color);
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .npc-results-home a:hover,
@@ -571,6 +597,15 @@ article > footer.entry-meta {
 
 .npc-table-wrapper {
   text-align: center;
+  overflow-x: auto;
+}
+
+/* Responsive table wrapper for mobile */
+@media (max-width: 768px) {
+  .npc-table-wrapper {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
 }
 
 /* ========================================
@@ -601,14 +636,19 @@ article > footer.entry-meta {
 
   .npc-results-home table,
   .results-content table {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .npc-results-home td,
   .npc-results-home th,
   .results-content td,
   .results-content th {
-    padding: 0.3rem 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .npc-results-home th,
+  .results-content th {
+    font-size: 0.8rem;
   }
 }
 
