@@ -718,6 +718,57 @@ article > footer.entry-meta {
   }
 }
 
+/* Header abbreviations - default: show full, hide abbreviated */
+.abbr-header {
+  display: none;
+}
+
+.full-header {
+  display: inline;
+}
+
+/* Extra-small screens - aggressive compression for phones */
+@media (max-width: 480px) {
+  .npc-results-home table,
+  .results-content table {
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .npc-results-home td,
+  .npc-results-home th,
+  .results-content td,
+  .results-content th {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .npc-results-home th,
+  .results-content th {
+    font-size: 0.7rem;
+  }
+
+  .npc-section-header {
+    font-size: 0.9rem;
+  }
+
+  .npc-title {
+    font-size: 1.15rem;
+  }
+
+  .npc-dates {
+    font-size: 0.85rem;
+  }
+
+  /* Show abbreviated headers on small screens */
+  .full-header {
+    display: none;
+  }
+
+  .abbr-header {
+    display: inline;
+  }
+}
+
 /* ========================================
    PRINT STYLES
    ======================================== */

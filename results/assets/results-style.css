@@ -224,6 +224,65 @@
   }
 }
 
+/* Header abbreviations - default: show full, hide abbreviated */
+.abbr-header {
+  display: none;
+}
+
+.full-header {
+  display: inline;
+}
+
+/* Extra-small screens - aggressive compression for phones */
+@media (max-width: 480px) {
+  .results-content {
+    padding: 0.25rem;
+  }
+
+  .results-content table {
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .results-content td,
+  .results-content th {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .results-content th {
+    font-size: 0.7rem;
+  }
+
+  .npc-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .npc-title {
+    font-size: 1.15rem;
+  }
+
+  .npc-dates {
+    font-size: 0.85rem;
+  }
+
+  .results-content .back-link {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Show abbreviated headers on small screens */
+  .full-header {
+    display: none;
+  }
+
+  .abbr-header {
+    display: inline;
+  }
+}
+
 /* Print styles */
 @media print {
   .results-content table {
