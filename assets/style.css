@@ -502,10 +502,6 @@ article > footer.entry-meta {
 /* ========================================
    RESULTS PAGES - NPC TABLES
    ======================================== */
-.npc-results-home,
-.results-content {
-  margin: 2rem 0;
-}
 
 /* Results content headings */
 .results-content h1 {
