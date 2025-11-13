@@ -1,11 +1,13 @@
-<div class="npc-table-wrapper">
-<table width="100%">
-<tr>
-<td><b class="pgTitle">Nick Power Cup {{ include.year }}</b></td>
-<td align="right" valign="bottom">{{ include.start_date }} - {{ include.end_date }}</td>
-</tr>
-</table>
+<div class="npc-section-header">
+  <h2 class="npc-title">Nick Power Cup {{ include.year }}</h2>
+  <span class="npc-dates">{{ include.start_date }} - {{ include.end_date }}</span>
+</div>
 
+{% if include.show_back_link %}
+<a href="/results/" class="back-link">← Back to all years</a>
+{% endif %}
+
+<div class="npc-table-wrapper">
 {% include npc_results.html results=include.results %}
 </div>
 
