@@ -508,9 +508,11 @@ article > footer.entry-meta {
 /* Results content headings */
 .results-content h1 {
   color: #222;
-  text-align: center;
+  text-align: left;
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--pool-table-green);
 }
 
 /* Back link navigation and view results link */
