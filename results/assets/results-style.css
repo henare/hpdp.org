@@ -92,6 +92,22 @@
   background-color: #e8f5e9;
 }
 
+/* Highlight Points column (2nd column) */
+.results-content td:nth-child(2),
+.results-content th:nth-child(2) {
+  font-weight: bold;
+}
+
+.results-content tbody td:nth-child(2) {
+  border-left: 3px solid var(--pool-table-green);
+  border-right: 3px solid var(--pool-table-green);
+}
+
+/* Bold player names (1st column) */
+.results-content tbody td:nth-child(1) {
+  font-weight: bold;
+}
+
 .results-content a {
   color: var(--border-color);
   text-decoration: none;
