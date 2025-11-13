@@ -509,6 +509,7 @@ article > footer.entry-meta {
 .results-content h1 {
   color: #222;
   text-align: center;
+  margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
