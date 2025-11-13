@@ -6,12 +6,17 @@
   --primary-color: #2c3e50;
   --border-color: #708090;
   --light-bg: #f8f9fa;
+  --off-white: #fafafa;
 }
 
 /* Reset for results content to preserve compact layout */
 .results-content {
   margin: 0;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 0 60px rgba(45, 80, 22, 0.4);
 }
 
 .results-content table {
@@ -27,13 +32,17 @@
   border: 1px solid var(--border-color);
 }
 
+.results-content td {
+  background-color: #e8e8e8;
+}
+
 .results-content th {
   background-color: var(--primary-color);
   color: white;
   font-weight: bold;
 }
 
-.results-content tr:hover {
+.results-content tbody tr:hover td {
   background-color: var(--light-bg);
 }
 
