@@ -1,0 +1,3 @@
+# Posts moved from the home page to /news/
+/page/:num/  /news/page/:num/  301
+/page/:num   /news/page/:num/  301
