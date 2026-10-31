@@ -37,7 +37,7 @@ docker compose run --rm jekyll bundle update
 ## Site Structure
 
 ```
-hpdp.org.au/
+hpdp.org/
 ├── _posts/           # Blog posts
 ├── results/          # Production results content
 │   ├── 2002/
@@ -94,7 +94,7 @@ Main configuration is in `_config.yml`:
 ```yaml
 title: Harold Park District Players
 description: A community theatre group based in Glebe, Sydney
-url: "https://hpdp.org.au"
+url: "https://www.hpdp.org"
 baseurl: ""
 ```
 

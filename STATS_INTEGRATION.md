@@ -2,7 +2,7 @@
 
 ## Overview
 
-The stats.hpdp.org.au site has been successfully integrated into the main hpdp.org.au site under the `/stats/` path. This document summarizes the integration process and changes made.
+The stats.hpdp.org.au site has been successfully integrated into the main hpdp.org site under the `/stats/` path. This document summarizes the integration process and changes made.
 
 **Integration Date:** 2025-11-11
 **Total Commits:** 11 (related to stats integration)
@@ -85,7 +85,7 @@ All internal links updated:
 
 ## What Was Preserved
 
-### From Original hpdp.org.au:
+### From Original hpdp.org:
 - All blog posts and articles
 - Existing layouts and styles
 - Homepage content and structure
@@ -165,7 +165,7 @@ f7552e8 - Upgrade Jekyll from 3.8.3 to 4.0
 
 ## Repository Status
 
-### Main Site (hpdp.org.au)
+### Main Site (hpdp.org)
 - Status: Fully integrated with stats
 - Build: Successful (170 pages generated)
 - Errors: None
@@ -174,7 +174,7 @@ f7552e8 - Upgrade Jekyll from 3.8.3 to 4.0
 ### Stats Site (stats.hpdp.org.au)
 - Status: Original repository preserved
 - Can be: Archived or kept for reference
-- Redirect: Can redirect to hpdp.org.au/stats/
+- Redirect: Can redirect to hpdp.org/stats/
 
 ## Testing Completed
 
@@ -207,7 +207,7 @@ None identified. The integration is complete and functional.
 5. Regular build testing
 
 ### Optional Next Steps:
-1. Add redirect from stats.hpdp.org.au to hpdp.org.au/stats/
+1. Add redirect from stats.hpdp.org.au to hpdp.org/stats/
 2. Update external links pointing to old stats site
 3. Archive original stats.hpdp.org.au repository
 4. Set up automated deployment pipeline
