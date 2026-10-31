@@ -28,7 +28,7 @@ timezone: Australia/Sydney
 # Build settings
 markdown: kramdown
 paginate: 10
-paginate_path: "/posts/page/:num/"
+paginate_path: "/news/page/:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
