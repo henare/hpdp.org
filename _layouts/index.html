@@ -2,6 +2,22 @@
 layout: default
 ---
 
+<section class="npc-hero">
+	<h2>Hello there NPCers and welcome to NPC '26!</h2>
+	<p>
+		It's that time again to see who will take home the illustrious Chook and
+		add their name to its storied history. Will Dean fight off the challengers
+		or will the Chook find a new home this year? Come along and find out:
+	</p>
+	<dl>
+		<dt>Where</dt>
+		<dd>The Golden Barley</dd>
+		<dt>When</dt>
+		<dd>7pm Wednesday 11th, 18th and 25th November</dd>
+	</dl>
+	<p>I look forward to seeing you all soon!!</p>
+</section>
+
 {% assign npc_2025_page = site.pages | where: "url", "/results/2025/npc/" | first %}
 <section class="npc-results-home">
 	{% include npc_results_section.html results=site.data.npc2025 year=npc_2025_page.year start_date=npc_2025_page.start_date end_date=npc_2025_page.end_date show_link=true %}

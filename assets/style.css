@@ -342,6 +342,45 @@ article > footer.entry-meta {
   background-color: #e8e8e8;
 }
 
+.npc-hero {
+  background-color: var(--pool-table-green);
+  color: white;
+  padding: 2rem 1.5rem;
+  margin: 0 0 1.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(45, 80, 22, 0.4);
+}
+
+.npc-hero h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.75rem;
+  color: white;
+}
+
+.npc-hero p {
+  margin: 0 0 1rem 0;
+}
+
+.npc-hero p:last-child {
+  margin-bottom: 0;
+}
+
+.npc-hero dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.npc-hero dt {
+  font-weight: bold;
+}
+
+.npc-hero dd {
+  margin: 0;
+}
+
 .npc-results-home {
   background-color: #e8e8e8;
   position: relative;
