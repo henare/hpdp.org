@@ -47,6 +47,9 @@ include:
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
+  - AGENTS.md
+  - README.md
+  - STATS_INTEGRATION.md
   - Gemfile
   - Gemfile.lock
   - node_modules
