@@ -381,6 +381,92 @@ article > footer.entry-meta {
   margin: 0;
 }
 
+/* Stop press: crime-scene yellow, hazard stripes and police tape */
+.stop-press {
+  --tape-yellow: #ffd400;
+  --tape-black: #111;
+  --siren-red: #c8102e;
+  background-color: var(--tape-yellow);
+  color: var(--tape-black);
+  padding: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem 0;
+  border: 0.75rem solid transparent;
+  border-image: repeating-linear-gradient(
+    -45deg,
+    var(--tape-black) 0 1rem,
+    var(--tape-yellow) 1rem 2rem
+  ) 12;
+  box-shadow: 0 0 60px rgba(255, 212, 0, 0.25);
+  overflow: hidden;
+}
+
+.stop-press .crime-tape {
+  margin: 0 -1rem 1.25rem -1rem;
+  padding: 0.35rem 0;
+  background-color: var(--tape-black);
+  color: var(--tape-yellow);
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: rotate(-1.5deg);
+}
+
+.stop-press .stop-press-label,
+.stop-press h2,
+.stop-press p {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.stop-press .stop-press-label {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--siren-red);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: rotate(-2deg);
+}
+
+.stop-press h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--tape-black);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.stop-press p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.stop-press p:last-child {
+  margin-bottom: 0;
+}
+
+.stop-press a,
+.stop-press a:hover {
+  color: var(--tape-black);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--siren-red);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+
+.stop-press a:hover {
+  color: var(--siren-red);
+}
+
 .npc-results-home {
   background-color: #e8e8e8;
   position: relative;
