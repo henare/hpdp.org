@@ -453,8 +453,8 @@ article > footer.entry-meta {
   margin-bottom: 0;
 }
 
-.stop-press a,
-.stop-press a:hover {
+aside.stop-press a,
+aside.stop-press a:hover {
   color: var(--tape-black);
   font-weight: bold;
   text-decoration: underline;
@@ -463,7 +463,7 @@ article > footer.entry-meta {
   text-underline-offset: 3px;
 }
 
-.stop-press a:hover {
+aside.stop-press a:hover {
   color: var(--siren-red);
 }
 
